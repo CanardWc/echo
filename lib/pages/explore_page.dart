@@ -233,7 +233,34 @@ class _ExplorePageState extends State<ExplorePage>
         padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: List.generate(buttonName.length, (index) {
+          children: <Widget> [
+            new ElevatedButton(
+                child: Text("Passer"),
+                onPressed: () {
+                  setState(() {
+                    controller.triggerLeft();
+                  });
+                },
+            ),
+            new ElevatedButton(
+                child: Text("Editer le texte"),
+                onPressed: null,
+            ),
+            new ElevatedButton(
+                child: Text("Partager"),
+                onPressed: () {
+                  setState(() {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) =>
+                          PopUpSharing(),
+                    );
+                    controller.triggerRight();
+                  });
+                },
+            ),
+          ],
+          /*List.generate(buttonName.length, (index) {
             return Container(
               width: 100,
               height: 58,
@@ -269,7 +296,7 @@ class _ExplorePageState extends State<ExplorePage>
                   },
               ),
             );
-          }),
+          }),*/
         ),
       ),
     );
