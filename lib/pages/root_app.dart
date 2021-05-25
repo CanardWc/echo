@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tinder_clone/pages/account_page.dart';
 import 'package:tinder_clone/pages/explore_page.dart';
+import 'package:tinder_clone/theme/colors.dart';
 import 'dart:developer';
 
 class RootPage extends StatefulWidget {
@@ -14,7 +15,7 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: primary_one,
       appBar: getAppBar(),
       body: getBody(),
     );
@@ -37,7 +38,7 @@ class _RootPageState extends State<RootPage> {
           : "images/settings.svg",
     ];
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: primary_one,
       elevation: 0,
       title: Padding(
         padding: const EdgeInsets.only(left: 10, right: 10),

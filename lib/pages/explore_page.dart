@@ -31,7 +31,7 @@ class _ExplorePageState extends State<ExplorePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
+      backgroundColor: Color(0xf3f3f3),
       body: getBody(),
       bottomSheet: getBottomSheet(),
     );
@@ -79,8 +79,9 @@ class _ExplorePageState extends State<ExplorePage>
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
                             colors: [
-                              black.withOpacity(0.25),
-                              black.withOpacity(0),
+                              primary_one,
+                              //black.withOpacity(0.25),
+                              //black.withOpacity(0),
                             ],
                             end: Alignment.topCenter,
                             begin: Alignment.bottomCenter)),
@@ -222,12 +223,12 @@ class _ExplorePageState extends State<ExplorePage>
 
   Widget getBottomSheet() {
     var size = MediaQuery.of(context).size;
-    var buttonName = ['Passer', "Editer ton repost", "Repost"];
+    var buttonName = ['Passer', "Editer le texte", "Partager"];
 
     return Container(
       width: size.width,
       height: 120,
-      decoration: BoxDecoration(color: white),
+      decoration: BoxDecoration(color: primary_one),
       child: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
         child: Row(
@@ -238,7 +239,7 @@ class _ExplorePageState extends State<ExplorePage>
               height: 58,
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: black,
+                  color: primary_one,
                   boxShadow: [
                     BoxShadow(
                       color: grey.withOpacity(0.1),
@@ -256,8 +257,7 @@ class _ExplorePageState extends State<ExplorePage>
                           context: context,
                           builder: (BuildContext context) =>                         
                                   PopUpSharing(),
-                                  )
-;
+                        );
                         controller.triggerRight();                          
                       });
                       }
